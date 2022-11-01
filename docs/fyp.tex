@@ -1,0 +1,82 @@
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
+
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage[margin=2cm]{geometry}
+
+\title{Google Scholars Data Visualisation}
+\author{Adi Bozzhanov}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+
+The aim of this document is to brainstorm about my Final Year Project topic
+and try to structure my initial thoughts about it. The vague initial problem statement is as follows:
+
+\textbf{"Parse data from google scholars and visualise it, potentially as a network of articles"}.
+
+As a starting point, I will try to answer following questions before going into implementation
+and planning details:
+
+
+\begin{itemize}
+\item What kind of data am I working with?
+\item What are potential ways of visualising this data?
+\item What is the potential development Stack?
+\item What do I expect the final result to look like?
+\end{itemize}
+
+\section{What am I working with?}
+
+This section is to just summarise what kind of information I can even get from google scholar.
+The google scholar landing page is just a simple search bar where one can enter any prompt
+and get a list of relevant scholarly articles as a result. Each article has the following
+information that will be useful for network visualisation.
+
+\begin{itemize}
+\item Authors [Article - Author]
+\item Cited by [Article - Article]
+\item Refers to [Article - Article]
+\item Number of citations
+\end{itemize}
+
+I believe this is everything that could be useful???
+\section{What can I visualise?}
+
+I could come up with those few useful ways to visualise the following data.
+\begin{itemize}
+\item Authors network [nodes: Authors, edges: articles, undirected graph]
+\item Citations networks [nodes: Articles, edges: citations/references, directed graph]
+\end{itemize}
+
+\section{Potential Stack}
+
+Considering that there already is a very nice \href{https://scholarly.readthedocs.io/en/latest/index.html}{scholarly} python library
+for accessing the google scholar in a pretty easy fashion, I would like to implement the
+majority of the project in python. Since it very likely will be a web application,
+Django + React could be just the right combination for the job.
+
+\section{Expected result}
+
+So far the plan is fairly simple: Make a web application with a python
+back-end which will provide the following features at the very least.
+\begin{itemize}
+\item Authors network visualisation and traversal
+\item Publications network visualisation and traversal
+\item Provide multiple ways of searching for a publication and rendering it's network
+  (Integrating default google scholar search results generation)
+\item Data filtering, sorting and basically search configuration tools.
+\end{itemize}
+
+The plan from this point would be to convert these thoughts into a technical specification,
+mock ups, the architecture plan,
+and come up with a development road map for the rest of the year.
+
+\end{document}
